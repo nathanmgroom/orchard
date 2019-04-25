@@ -11,7 +11,7 @@ import numpy as np
 con = sqlite3.connect(":memory:")
 con.text_factory = str
 cur = con.cursor()
-# Reading data file into Python
+# Reading data file into Python (cleaned slightly in Excel)
 df = pd.read_csv('C:/Users/natha/Desktop/DOHMH_New_York_City_Restaurant_Inspection_Results2.csv')
 df.to_sql('food_table', con, if_exists='replace', index=True)
 
