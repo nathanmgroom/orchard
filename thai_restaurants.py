@@ -12,7 +12,10 @@ con = sqlite3.connect(":memory:")
 con.text_factory = str
 cur = con.cursor()
 # Reading data file into Python (cleaned slightly in Excel)
-df = pd.read_csv('C:/Users/natha/Desktop/DOHMH_New_York_City_Restaurant_Inspection_Results2.csv')
+# Reading data file into Python
+
+fil = 'https://github.com/nathanmgroom/orchard/raw/master/DOHMH_New_York_City_Restaurant_Inspection_Results2.zip'
+df = pd.read_csv(fil, compression='zip')
 df.to_sql('food_table', con, if_exists='replace', index=True)
 
 
