@@ -3,7 +3,9 @@
 The schema consists of 1 table, called 'food_table' which is on a SQLite database in the machine's local memory.
 The table is the .CSV of NYC Dept. of Health restaurant reviews provided in the assignement prompt
 
-The data was slightly cleaned in Excel to make it easier to import into Python -- for example replacing spaces in column names with periods, and the cleaned file is titled: DOHMH_New_York_City_Restaurant_Inspection_Results2.csv
+The data was slightly cleaned in Excel to make it easier to import into Python -- for example replacing spaces in column names with periods, and the cleaned file is currently on Github at the following link:
+https://github.com/nathanmgroom/orchard/raw/master/DOHMH_New_York_City_Restaurant_Inspection_Results2.zip
+
 
 All the data was uploaded to a SQLite database using SQLite3 in Python and most insights were found with SQL queries. 
 The main question asked in this prompt was 'What are the top 10 Thai restaurants with either an A or B rating?', so I had to determine criteria as to what makes a top Thai restaurant. I used the 'score' column which assigns each restaurant a cleanliness score. It seems that lower scores are better (as 'A' grade restaurants have lower scores than 'B' grade restaurants), so I queried a list of the Thai restaurants with a score of A or B, with the lowest scores. There was one restaurant with a score of 0.0 and 16 restaurants with a score of 2.0. I decided to include all of these in the list of 'best restaurants' even though the prompt only asked for 10, as I didn't think there was a way to decide what the 'top' (e.g. 9 out of 16) restaurants that scored a 2.0 were. Including the restaurant with a score of 0.0, the list has a total of 17 restaurants.
